@@ -12,6 +12,14 @@ app.use(express.json());
 
 // connect to db
 
+// APIS
+app.use("/api/v1/register-login", (req, res) => {
+  console.log(req.body);
+  res.json({
+    message: "todo",
+  });
+});
+
 app.get("/", (req, res) => {
   res.json({
     message: "You reaced e commerce api",

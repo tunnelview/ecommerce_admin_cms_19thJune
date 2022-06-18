@@ -1,2 +1,19 @@
 ### live server test
 GET http://localhost:8000
+
+
+## ========== Admin Registration and login
+
+### asdf
+POST http://localhost:8000/api/v1/register-login
+Content-Type: application/application/json
+
+{
+    "Fname": "prem",
+    "lName": "Acharya",
+    "Dob": "2020-02-20",
+    "email": "shibin.abraham1986@gmail.com",
+    "password": "123456",
+    "location": "sydney"
+
+}
