@@ -4,9 +4,9 @@ GET http://localhost:8000
 
 ## ========== Admin Registration and login
 
-### asdf
+### Admin User Registration
 POST http://localhost:8000/api/v1/register-login
-Content-Type: application/application/json
+Content-Type: application/json
 
 {
     "Fname": "prem",
