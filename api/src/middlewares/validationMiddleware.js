@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 const adminRegistrationValication = (req, res, next) => {
-  console.log(req.body);
+  //   console.log(req.body);
   //first check if data is clean or not if it is not clear then response
   // from here with the error msg otherwise let express to continue exe code to the next middleware by calling next ()
 
@@ -14,10 +14,16 @@ const adminRegistrationValication = (req, res, next) => {
       tlds: { allow: ["com", "net"] },
     }).max(50),
     password: Joi.string().min(6).max(50),
-    location: Joi.string().allow(""),
+    address: Joi.string().allow(""),
   });
 
   const result = schema.validate(req.body);
+  if (error) {
+    return res.json({
+      status: "error",
+      message: '"email" must be valid email',
+    });
+  }
 
   clg.log(result);
 
