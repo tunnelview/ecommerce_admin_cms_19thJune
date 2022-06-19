@@ -9,20 +9,24 @@ route.all("/", (req, res, next) => {
 });
 
 route.post("/", (req, res) => {
-  console.log(req.body);
-  // 1. encrypt password
+  try {
+    // 1. encrypt password
 
-  console.time("hashing");
+    console.time("hashing");
 
-  const hashedPass = hashPassword(req.body.password);
-  console.log(hashedPass);
+    const hashedPass = hashPassword(req.body.password);
+    console.log(hashedPass);
 
-  // 2. call model to run save query
-  // 3. unique url endpoint and sent that to customer
+    // 2. call model to run save query
+    // 3. unique url endpoint and sent that to customer
 
-  res.json({
-    message: "todo",
-  });
+    res.json({
+      message: "todo",
+    });
+  } catch (error) {
+    next(error);
+  }
+  //   console.log(req.body);
 });
 
 export default route;
