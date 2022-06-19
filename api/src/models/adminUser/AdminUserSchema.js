@@ -8,6 +8,12 @@ const AdminSchema = new mongoose.Schema(
       default: "inactive",
     },
 
+    role: {
+      type: String,
+      required: true,
+      default: "Admin",
+    },
+
     fName: {
       type: String,
       required: true,
@@ -42,3 +48,5 @@ const AdminSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+export default mongoose.model("Admin_user", AdminShcema);
